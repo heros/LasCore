@@ -2182,7 +2182,7 @@ void World::SendGlobalGMMessage(WorldPacket* packet, WorldSession* self, uint32 
     }
 }
 
-namespace Las
+namespace Trinity
 {
     class WorldWorldTextBuilder
     {
