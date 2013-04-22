@@ -1,0 +1,18 @@
+InfinityCore login is a bit different. Authserver is designed to allow any client version from 1.12.0 to 5.2.0 (currently)
+
+The account creation is also a little different.
+Syntax: .account create $account $password $email
+
+Here is the basics of how Authserver does authentication:
+
+When you log in, Authserver checks your client version. If version is 15595 or older, it will require username\pass to log in. 
+There is a field called "last_build" in account table. It stores the last known client version. If current client version is same as what is stored in last_build, then it just authenticates.
+If it is different, Authserver will recalculate v and s fields.
+
+If client version is greater than 15595 then you use email\pass. the process is the same. The only difference now between greater or less than 15595 is the pass field
+
+for 15595 or older, it uses sha_pass_hash. For newer than 15595 then it uses sha_email_pass_hash. v and s are calculated using these fields, based on last_build field.
+
+last_build field is populated with data first time you log in, and only changes if you have a different client version than the last time you logged in.
+
+LordPsyan
