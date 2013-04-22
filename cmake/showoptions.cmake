@@ -1,9 +1,9 @@
 # output generic information about the core and buildtype chosen
 message("")
-message("* InfinityCore rev. hash  : ${rev_hash}")
-message("* InfinityCore rev. date  : ${rev_date}")
+message("* LasCore rev. hash  : ${rev_hash}")
+message("* LasCore rev. date  : ${rev_date}")
 if( UNIX )
-  message("* InfinityCore buildtype  : ${CMAKE_BUILD_TYPE}")
+  message("* LasCore buildtype  : ${CMAKE_BUILD_TYPE}")
 endif()
 message("")
 
@@ -58,7 +58,7 @@ endif()
 
 if( WITH_COREDEBUG )
   message("* Use coreside debug     : Yes")
-  add_definitions(-DTRINITY_DEBUG)
+  add_definitions(-DLAS_DEBUG)
 else()
   message("* Use coreside debug     : No  (default)")
 endif()
