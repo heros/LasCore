@@ -52,7 +52,7 @@ class Aura;
 // AURA_EFFECT_HANDLE_CHANGE_AMOUNT_MASK set - aura is recalculated or is just applied/removed - need to redo all things related to m_amount
 // AURA_EFFECT_HANDLE_CHANGE_AMOUNT_SEND_FOR_CLIENT_MASK - logical or of above conditions
 // AURA_EFFECT_HANDLE_STAT - set when stats are reapplied
-// such checks will speedup trinity change amount/send for client operations
+// such checks will speedup Las change amount/send for client operations
 // because for change amount operation packets will not be send
 // aura effect handlers shouldn't contain any AuraEffect or Aura object modifications
 
@@ -5641,7 +5641,7 @@ void AuraEffect::HandlePeriodicDummyAuraTick(Unit* target, Unit* caster) const
                     if (targets.empty())
                         return;
 
-                    Unit* spellTarget = Trinity::Containers::SelectRandomContainerElement(targets);
+                    Unit* spellTarget = Las::Containers::SelectRandomContainerElement(targets);
 
                     target->CastSpell(spellTarget, 57840, true);
                     target->CastSpell(spellTarget, 57841, true);

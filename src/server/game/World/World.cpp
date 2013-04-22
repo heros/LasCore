@@ -406,7 +406,7 @@ void World::LoadConfigSettings(bool reload)
 
     ///- Read the player limit and the Message of the day from the config file
     SetPlayerAmountLimit(ConfigMgr::GetIntDefault("PlayerLimit", 100));
-    SetMotd(ConfigMgr::GetStringDefault("Motd", "Welcome to a Trinity Core Server."));
+    SetMotd(ConfigMgr::GetStringDefault("Motd", "Welcome to a Las Core Server."));
 
     ///- Read ticket system setting from the config file
     m_bool_configs[CONFIG_ALLOW_TICKETS] = ConfigMgr::GetBoolDefault("AllowTickets", true);
@@ -1309,7 +1309,7 @@ void World::SetInitialWorldSettings()
 
     ///- Loading strings. Getting no records means core load has to be canceled because no error message can be output.
 
-    sLog->outInfo(LOG_FILTER_SERVER_LOADING, "Loading Trinity strings...");
+    sLog->outInfo(LOG_FILTER_SERVER_LOADING, "Loading Las strings...");
     if (!sObjectMgr->LoadTrinityStrings())
         exit(1);                                            // Error message displayed in function already
 
@@ -2182,7 +2182,7 @@ void World::SendGlobalGMMessage(WorldPacket* packet, WorldSession* self, uint32 
     }
 }
 
-namespace Trinity
+namespace Las
 {
     class WorldWorldTextBuilder
     {
@@ -2237,7 +2237,7 @@ namespace Trinity
             int32 i_textId;
             va_list* i_args;
     };
-}                                                           // namespace Trinity
+}                                                           // namespace Las
 
 /// Send a System Message to all players (except self if mentioned)
 void World::SendWorldText(int32 string_id, ...)
@@ -2690,7 +2690,7 @@ void World::SendAutoBroadcast()
 
     std::string msg;
 
-    msg = Trinity::Containers::SelectRandomContainerElement(m_Autobroadcasts);
+    msg = Las::Containers::SelectRandomContainerElement(m_Autobroadcasts);
 
     uint32 abcenter = sWorld->getIntConfig(CONFIG_AUTOBROADCAST_CENTER);
 

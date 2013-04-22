@@ -1061,7 +1061,7 @@ void Spell::SelectImplicitConeTargets(SpellEffIndex effIndex, SpellImplicitTarge
         {
             // Other special target selection goes here
             if (uint32 maxTargets = m_spellValue->MaxAffectedTargets)
-                Trinity::Containers::RandomResizeList(targets, maxTargets);
+                Las::Containers::RandomResizeList(targets, maxTargets);
 
             // for compability with older code - add only unit and go targets
             // TODO: remove this
@@ -1341,7 +1341,7 @@ void Spell::SelectImplicitAreaTargets(SpellEffIndex effIndex, SpellImplicitTarge
 
         // Other special target selection goes here
         if (uint32 maxTargets = m_spellValue->MaxAffectedTargets)
-            Trinity::Containers::RandomResizeList(unitTargets, maxTargets);
+            Las::Containers::RandomResizeList(unitTargets, maxTargets);
 
         for (std::list<Unit*>::iterator itr = unitTargets.begin(); itr != unitTargets.end(); ++itr)
             AddUnitTarget(*itr, effMask, false);
@@ -1350,7 +1350,7 @@ void Spell::SelectImplicitAreaTargets(SpellEffIndex effIndex, SpellImplicitTarge
     if (!gObjTargets.empty())
     {
         if (uint32 maxTargets = m_spellValue->MaxAffectedTargets)
-            Trinity::Containers::RandomResizeList(gObjTargets, maxTargets);
+            Las::Containers::RandomResizeList(gObjTargets, maxTargets);
 
         for (std::list<GameObject*>::iterator itr = gObjTargets.begin(); itr != gObjTargets.end(); ++itr)
             AddGOTarget(*itr, effMask);
@@ -7275,7 +7275,7 @@ void Spell::CancelGlobalCooldown()
         m_caster->ToPlayer()->GetGlobalCooldownMgr().CancelGlobalCooldown(m_spellInfo);
 }
 
-namespace Trinity
+namespace Las
 {
 
 WorldObjectSpellTargetCheck::WorldObjectSpellTargetCheck(Unit* caster, Unit* referer, SpellInfo const* spellInfo,
@@ -7422,4 +7422,4 @@ bool WorldObjectSpellTrajTargetCheck::operator()(WorldObject* target)
     return WorldObjectSpellAreaTargetCheck::operator ()(target);
 }
 
-} //namespace Trinity
+} //namespace Las

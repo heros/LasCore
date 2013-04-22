@@ -887,7 +887,7 @@ class spell_putricide_ooze_channel : public SpellScriptLoader
                     return;
                 }
 
-                WorldObject* target = Trinity::Containers::SelectRandomContainerElement(targets);
+                WorldObject* target = Las::Containers::SelectRandomContainerElement(targets);
                 targets.clear();
                 targets.push_back(target);
                 _target = target;
@@ -1139,7 +1139,7 @@ class spell_putricide_unbound_plague : public SpellScriptLoader
 
 
                 targets.remove_if(Trinity::UnitAuraCheck(true, sSpellMgr->GetSpellIdForDifficulty(SPELL_UNBOUND_PLAGUE, GetCaster())));
-                Trinity::Containers::RandomResizeList(targets, 1);
+                Las::Containers::RandomResizeList(targets, 1);
             }
 
             void HandleScript(SpellEffIndex /*effIndex*/)

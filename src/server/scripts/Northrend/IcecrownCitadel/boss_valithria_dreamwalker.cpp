@@ -1193,7 +1193,7 @@ class spell_dreamwalker_summoner : public SpellScriptLoader
                 if (targets.empty())
                     return;
 
-                WorldObject* target = Trinity::Containers::SelectRandomContainerElement(targets);
+                WorldObject* target = Las::Containers::SelectRandomContainerElement(targets);
                 targets.clear();
                 targets.push_back(target);
             }
@@ -1239,7 +1239,7 @@ class spell_dreamwalker_summon_suppresser : public SpellScriptLoader
                 std::list<Creature*> summoners;
                 GetCreatureListWithEntryInGrid(summoners, caster, NPC_WORLD_TRIGGER, 100.0f);
                 summoners.remove_if(Trinity::UnitAuraCheck(true, SPELL_RECENTLY_SPAWNED));
-                Trinity::Containers::RandomResizeList(summoners, 2);
+                Las::Containers::RandomResizeList(summoners, 2);
                 if (summoners.empty())
                     return;
 

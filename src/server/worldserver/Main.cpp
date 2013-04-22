@@ -31,9 +31,9 @@
 #include "Log.h"
 #include "Master.h"
 
-#ifndef _LAS_CORE_CONFIG
-# define _LAS_CORE_CONFIG  "worldserver.conf"
-#endif //_LAS_CORE_CONFIG
+#ifndef _TRINITY_CORE_CONFIG
+# define _TRINITY_CORE_CONFIG  "worldserver.conf"
+#endif //_TRINITY_CORE_CONFIG
 
 #ifdef _WIN32
 #include "ServiceWin32.h"
@@ -69,11 +69,11 @@ void usage(const char *prog)
         , prog);
 }
 
-/// Launch the Trinity server
+/// Launch the Las server
 extern int main(int argc, char **argv)
 {
     ///- Command line parsing to get the configuration file name
-    char const* cfg_file = _TRINITY_CORE_CONFIG;
+    char const* cfg_file = _Las_CORE_CONFIG;
     int c = 1;
     while ( c < argc )
     {

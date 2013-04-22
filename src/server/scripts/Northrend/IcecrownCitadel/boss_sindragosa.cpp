@@ -1132,7 +1132,7 @@ class spell_sindragosa_unchained_magic : public SpellScriptLoader
                 unitList.remove_if(UnchainedMagicTargetSelector());
                 uint32 maxSize = uint32(GetCaster()->GetMap()->GetSpawnMode() & 1 ? 6 : 2);
                 if (unitList.size() > maxSize)
-                    Trinity::Containers::RandomResizeList(unitList, maxSize);
+                    Las::Containers::RandomResizeList(unitList, maxSize);
             }
 
             void Register()
@@ -1429,7 +1429,7 @@ class spell_frostwarden_handler_order_whelp : public SpellScriptLoader
                 if (targets.empty())
                     return;
 
-                WorldObject* target = Trinity::Containers::SelectRandomContainerElement(targets);
+                WorldObject* target = Las::Containers::SelectRandomContainerElement(targets);
                 targets.clear();
                 targets.push_back(target);
             }
@@ -1446,7 +1446,7 @@ class spell_frostwarden_handler_order_whelp : public SpellScriptLoader
                 if (unitList.empty())
                     return;
 
-                Trinity::Containers::SelectRandomContainerElement(unitList)->CastSpell(GetHitUnit(), uint32(GetEffectValue()), true);
+                Las::Containers::SelectRandomContainerElement(unitList)->CastSpell(GetHitUnit(), uint32(GetEffectValue()), true);
             }
 
             void Register()

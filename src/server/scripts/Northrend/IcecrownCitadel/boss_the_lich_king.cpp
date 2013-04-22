@@ -2576,7 +2576,7 @@ class spell_the_lich_king_valkyr_target_search : public SpellScriptLoader
                 if (targets.empty())
                     return;
 
-                _target = Trinity::Containers::SelectRandomContainerElement(targets);
+                _target = Las::Containers::SelectRandomContainerElement(targets);
                 targets.clear();
                 targets.push_back(_target);
                 GetCaster()->GetAI()->SetGUID(_target->GetGUID());
@@ -2784,7 +2784,7 @@ class spell_the_lich_king_vile_spirit_move_target_search : public SpellScriptLoa
                 if (targets.empty())
                     return;
 
-                _target = Trinity::Containers::SelectRandomContainerElement(targets);
+                _target = Las::Containers::SelectRandomContainerElement(targets);
             }
 
             void HandleScript(SpellEffIndex effIndex)

@@ -1377,7 +1377,7 @@ class npc_captain_arnath : public CreatureScript
                         case EVENT_ARNATH_PW_SHIELD:
                         {
                             std::list<Creature*> targets = DoFindFriendlyMissingBuff(40.0f, SPELL_POWER_WORD_SHIELD);
-                            DoCast(Trinity::Containers::SelectRandomContainerElement(targets), SPELL_POWER_WORD_SHIELD);
+                            DoCast(Las::Containers::SelectRandomContainerElement(targets), SPELL_POWER_WORD_SHIELD);
                             Events.ScheduleEvent(EVENT_ARNATH_PW_SHIELD, urand(15000, 20000));
                             break;
                         }
@@ -1881,7 +1881,7 @@ class spell_frost_giant_death_plague : public SpellScriptLoader
                 targets.remove_if(DeathPlagueTargetSelector(GetCaster()));
                 if (!targets.empty())
                 {
-                    WorldObject* target = Trinity::Containers::SelectRandomContainerElement(targets);
+                    WorldObject* target = Las::Containers::SelectRandomContainerElement(targets);
                     targets.clear();
                     targets.push_back(target);
                 }
@@ -1970,7 +1970,7 @@ class spell_svalna_revive_champion : public SpellScriptLoader
             void RemoveAliveTarget(std::list<WorldObject*>& targets)
             {
                 targets.remove_if(AliveCheck());
-                Trinity::Containers::RandomResizeList(targets, 2);
+                Las::Containers::RandomResizeList(targets, 2);
             }
 
             void Land(SpellEffIndex /*effIndex*/)

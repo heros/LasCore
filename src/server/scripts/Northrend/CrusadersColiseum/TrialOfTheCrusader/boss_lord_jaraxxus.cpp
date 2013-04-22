@@ -567,7 +567,7 @@ class spell_mistress_kiss_area : public SpellScriptLoader
                         _targets.push_back(*itr);
 
                 // pick a random target and kiss him
-                if (WorldObject* _target = Trinity::Containers::SelectRandomContainerElement(_targets))
+                if (WorldObject* _target = Las::Containers::SelectRandomContainerElement(_targets))
                 {
                     // correctly fill "targets" for the visual effect
                     targets.clear();

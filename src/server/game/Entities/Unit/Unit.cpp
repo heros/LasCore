@@ -14098,7 +14098,7 @@ Unit* Unit::SelectNearbyTarget(Unit* exclude, float dist) const
         return NULL;
 
     // select random
-    return Trinity::Containers::SelectRandomContainerElement(targets);
+    return Las::Containers::SelectRandomContainerElement(targets);
 }
 
 void Unit::ApplyAttackTimePercentMod(WeaponAttackType att, float val, bool apply)

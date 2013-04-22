@@ -78,7 +78,7 @@ void usage(const char *prog)
 extern int main(int argc, char **argv)
 {
     // Command line parsing to get the configuration file name
-    char const* cfg_file = _TRINITY_REALM_CONFIG;
+    char const* cfg_file = _Las_REALM_CONFIG;
     int c = 1;
     while (c < argc)
     {
