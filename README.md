@@ -1,4 +1,4 @@
-InfinityCore
+LsCore
 ============
 
 Fork form < https://github.com/InfinityCore/InfinityCore >
