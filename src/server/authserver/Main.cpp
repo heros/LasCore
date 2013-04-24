@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2008-2012 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2012 TrinityCore <http://soon/> 
  * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -133,6 +134,8 @@ extern int main(int argc, char **argv)
     // Initialize the database connection
     if (!StartDB())
         return 1;
+
+    sLog->SetRealmID(0);                                               // ensure we've set realm to 0 (authserver realmid)
 
     // Get the list of realms for the server
     sRealmList->Initialize(ConfigMgr::GetIntDefault("RealmsStateUpdateDelay", 20));
@@ -270,7 +273,7 @@ bool StartDB()
     }
 
     sLog->outInfo(LOG_FILTER_AUTHSERVER, "Started auth database connection pool.");
-    sLog->SetRealmId(0); // Enables DB appenders when realm is set.
+    sLog->EnableDBAppenders();
     return true;
 }
 
