@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2013 LasCore <http://lascore.makeforum.eu/>
  * Copyright (C) 2008-2012 TrinityCore <http://www.trinitycore.org/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -22,6 +23,7 @@ namespace AuthHelper
 {
     static RealmBuildInfo const PostBcAcceptedClientBuilds[] =
     {
+	    {16826, 5, 2, 0, 'a'},
         {16769, 5, 2, 0, ' '},
 	    {16357, 5, 1, 0, 'a'},
 	    {16309, 5, 1, 0, ' '},

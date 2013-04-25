@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2013 LasCore <http://lascore.makeforum.eu/>
  * Copyright (C) 2008-2010 TrinityCore <http://www.trinitycore.org/>
  *
  * This program is free software; you can redistribute it and/or modify it

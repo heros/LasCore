@@ -311,7 +311,7 @@ void ReadAreaTableDBC()
 //    if (!SFileOpenFileEx(LocaleMpq, "DBFilesClient\\LiquidType.dbc", SFILE_OPEN_PATCHED_FILE, &dbcFile))
 //   {
 //        printf("Fatal error: Cannot find LiquidType.dbc in archive!\n");
-//        exit(1);
+//         exit(1);
 //    }
 //
 //    DBCFile dbc(dbcFile);

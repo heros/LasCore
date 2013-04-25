@@ -1,5 +1,5 @@
 # Copyright (C) 2008-2012 Trinity <http://www.trinitycore.org/>
-# Copyright (C) 2013 LasCore <http://soon>
+# Copyright (C) 2013 LasCore <http://lascore.makeforum.eu/>
 #
 # This file is free software; as a special exception the author gives
 # unlimited permission to copy and/or distribute it, with or without

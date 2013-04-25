@@ -1,5 +1,5 @@
 ################################################
-# Trinity Core World Server configuration file #
+#    LasCore World Server configuration file   #
 ################################################
 [worldserver]
 
@@ -60,7 +60,7 @@ RealmID = 1
 #    DataDir
 #        Description: Data directory setting.
 #        Important:   DataDir needs to be quoted, as the string might contain space characters.
-#        Example:     "@prefix@/share/trinitycore"
+#        Example:     "@prefix@/share/lascore"
 #        Default:     "."
 
 DataDir = "."
@@ -85,13 +85,13 @@ LogsDir = ""
 #                                                                 section my.ini)
 #                     ".;/path/to/unix_socket;username;password;database" - (use Unix sockets on
 #                                                                           Unix/Linux)
-#        Default:     "127.0.0.1;3306;trinity;trinity;auth"       - (LoginDatabaseInfo)
-#                     "127.0.0.1;3306;trinity;trinity;world"      - (WorldDatabaseInfo)
-#                     "127.0.0.1;3306;trinity;trinity;characters" - (CharacterDatabaseInfo)
+#        Default:     "127.0.0.1;3306;las;las;auth"       - (LoginDatabaseInfo)
+#                     "127.0.0.1;3306;las;las;world"      - (WorldDatabaseInfo)
+#                     "127.0.0.1;3306;las;las;characters" - (CharacterDatabaseInfo)
 
-LoginDatabaseInfo     = "127.0.0.1;3306;trinity;trinity;auth"
-WorldDatabaseInfo     = "127.0.0.1;3306;trinity;trinity;world"
-CharacterDatabaseInfo = "127.0.0.1;3306;trinity;trinity;characters"
+LoginDatabaseInfo     = "127.0.0.1;3306;las;las;auth"
+WorldDatabaseInfo     = "127.0.0.1;3306;las;las;world"
+CharacterDatabaseInfo = "127.0.0.1;3306;las;las;characters"
 
 #
 #    LoginDatabase.WorkerThreads
@@ -277,8 +277,8 @@ PlayerSave.Stats.SaveOnlyOnLogout = 1
 #                     1 - (Enabled, vmap.enableHeight)
 #                     0 - (Disabled)
 
-vmap.enableLOS    = 1
-vmap.enableHeight = 1
+vmap.enableLOS    = 0
+vmap.enableHeight = 0
 
 #
 #    vmap.ignoreSpellIds
@@ -287,7 +287,7 @@ vmap.enableHeight = 1
 #        Example:     "7720,1337"
 #        Default:     "7720"
 
-vmap.ignoreSpellIds = "7720"
+vmap.ignoreSpellIds = ""
 
 #
 #    vmap.petLOS
@@ -295,7 +295,7 @@ vmap.ignoreSpellIds = "7720"
 #        Default:     1 - (Enabled, each pet attack will be checked for line of sight)
 #                     0 - (Disabled, somewhat less CPU usage)
 
-vmap.petLOS = 1
+vmap.petLOS = 0
 
 #
 #    vmap.enableIndoorCheck
@@ -303,7 +303,7 @@ vmap.petLOS = 1
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled, somewhat less CPU usage)
 
-vmap.enableIndoorCheck = 1
+vmap.enableIndoorCheck = 0
 
 #
 #    DetectPosCollision
@@ -612,12 +612,13 @@ DeclinedNames = 0
 #    Expansion
 #        Description: Allow server to use content from expansions. Checks for expansion-related
 #                     map files, client compatibility and class/race character creation.
-#        Default:     3 - (Expansion 3)
+#        Default:     4 - (Expansion 4)
+#                     3 - (Expansion 3)
 #                     2 - (Expansion 2)
 #                     1 - (Expansion 1)
 #                     0 - (Disabled, Ignore and disable expansion content (maps, races, classes)
 
-Expansion = 3
+Expansion = 4
 
 #
 #    MinPlayerName
@@ -746,7 +747,7 @@ SkipCinematics = 0
 #        Range:       1-255
 #        Default:     85
 
-MaxPlayerLevel = 85
+MaxPlayerLevel = 90
 
 #
 #    MinDualSpecLevel
@@ -783,9 +784,9 @@ StartPlayerMoney = 0
 #    RecruitAFriend.MaxLevel
 #        Description: Highest level up to which a character can benefit from the Recruit-A-Friend
 #                     experience multiplier.
-#        Default:     80
+#        Default:     120
 
-RecruitAFriend.MaxLevel = 80
+RecruitAFriend.MaxLevel = 120
 
 #
 #    RecruitAFriend.MaxDifference
@@ -1062,7 +1063,7 @@ BeepAtStart = 1
 #        Example:     "Welcome to John\'s Server@This server runs on Trinity Core."
 #        Default:     "Welcome to a Trinity Core server."
 
-Motd = "Welcome to a Trinity Core server."
+Motd = "Welcome to a Las Core server."
 
 #
 #    Server.LoginInfo
@@ -1133,7 +1134,7 @@ Warden.Enabled = 0
 #        Default:     3 - (Enabled)
 #                     0 - (Disabled)
 
-Warden.NumMemChecks = 3
+Warden.NumMemChecks = 0
 
 #
 #    Warden.NumOtherChecks
@@ -1142,7 +1143,7 @@ Warden.NumMemChecks = 3
 #        Default:     7 - (Enabled)
 #                     0 - (Disabled)
 
-Warden.NumOtherChecks = 7
+Warden.NumOtherChecks = 0
 
 #
 #    Warden.ClientResponseDelay
@@ -1150,7 +1151,7 @@ Warden.NumOtherChecks = 7
 #        Default:     600 - (10 Minutes)
 #                     0 - (Disabled, client won't be kicked)
 
-Warden.ClientResponseDelay = 600
+Warden.ClientResponseDelay = 0
 
 #
 #    Warden.ClientCheckHoldOff
@@ -1159,7 +1160,7 @@ Warden.ClientResponseDelay = 600
 #        Default:     30 - (30 Seconds)
 #                     0  - (Send check as soon as possible)
 
-Warden.ClientCheckHoldOff = 30
+Warden.ClientCheckHoldOff = 0
 
 #
 #    Warden.ClientCheckFailAction
@@ -2104,10 +2105,10 @@ AutoBroadcast.Timer = 60000
 #
 #    Battleground.CastDeserter
 #        Description: Cast Deserter spell at players who leave battlegrounds in progress.
-#        Default:     1 - (Enabled)
-#                     0 - (Disabled)
+#        Default:     0 - (Disabled)
+#                     1 - (Enabled)
 
-Battleground.CastDeserter = 1
+Battleground.CastDeserter = 0
 
 #
 #    Battleground.QueueAnnouncer.Enable
@@ -2448,10 +2449,10 @@ CharDelete.MinLevel = 0
 #
 #    CharDelete.KeepDays
 #        Description: Time (in days) before unlinked characters will be removed from the database.
-#        Default:     30 - (Enabled)
-#                     0  - (Disabled, Don't delete any characters)
+#                     30 - (Enabled)
+#        Default:     0  - (Disabled, Don't delete any characters)
 
-CharDelete.KeepDays = 30
+CharDelete.KeepDays = 0
 
 #
 ###################################################################################################
@@ -2809,10 +2810,10 @@ Loggers=Root Chat DBErrors GM RA Warden Character Load WorldServer Opcodes
 #
 #    Guild.LevelingEnabled
 #        Description: Controls whether guild can gain levels
-#        Default:     1
+#        Default:     0
 #
 
-Guild.LevelingEnabled = 1
+Guild.LevelingEnabled = 0
 
 #
 #    Guild.SaveInterval
